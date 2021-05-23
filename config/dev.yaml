@@ -1,9 +1,9 @@
-awsAccount: "558791111127"
-awsRegion: eu-west-2
+awsAccount: "277820706013"
+awsRegion: eu-west-3
 
 network:
   vpc:
-    cidr: 10.10.128.0/18
+    cidr: 10.9.0.0/18
 
 data:
   elasticsearch:

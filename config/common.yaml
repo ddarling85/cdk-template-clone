@@ -1,18 +1,18 @@
 # Common tags applied to all resources
 tags:
-  cdk-stack: cdk-template
-  team: my-team
+  DevOpsDeploy: BaselineConfig
+  team: DevOps
 
-name: cdkTemplate
+name: BaselineConfig
 
 network:
   vpc:
     natGatewaySubnetName: Public
-    maxAzs: 3
+    maxAzs: 1
 
   subnets:
     # Backend subnet
-    - cidrMask: 21
+    - cidrMask: 22
       name: Private
       subnetType: PRIVATE
     # Data subnet
@@ -20,7 +20,7 @@ network:
       name: Data
       subnetType: PRIVATE
     # Public subnet
-    - cidrMask: 21
+    - cidrMask: 22
       name: Public
       subnetType: PUBLIC
 
@@ -41,7 +41,7 @@ compute:
 
 data:
   elasticsearch:
-    domainName: cdk-template
+    domainName: BaselineConfig
     version: "7.9"
     capacity:
       masterNodes:

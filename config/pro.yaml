@@ -1,6 +1,6 @@
-awsAccount: "558791111127"
+awsAccount: "277820706013"
 awsRegion: eu-west-3
 
 network:
   vpc:
-    cidr: 10.11.128.0/18
+    cidr: 10.11.0.0/18

@@ -1,4 +1,4 @@
-LOCAL_VENV_NAME=.venv
+LOCAL_VENV_NAME=env
 PYTHON=python3
 STAGE?=dev
 STACKS?=NetworkStack ComputeStack DataStack
@@ -7,7 +7,7 @@ STACKS?=NetworkStack ComputeStack DataStack
 .PHONY: all test lint synth diff deploy
 
 local-venv:
-	$(PYTHON) -m venv .venv
+	$(PYTHON) -m venv env
 
 install-dependencies:
 	pip install -r requirements.txt
@@ -23,6 +23,9 @@ synth:
 
 deploy: synth
 	@cdk deploy --app=cdk.out/$(STAGE) $(STACKS)
+
+list:
+	@cdk ls -c stage=$(STAGE) $(STACKS)
 
 diff:
 	@cdk diff -c stage=$(STAGE) $(STACKS)
